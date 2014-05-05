@@ -1,16 +1,36 @@
-#include "story.h"
+#include <fstream>
+#include <string>
+#include <iostream>
+
+using std::ifstream;
+using std::string;
+using std::getline;
+using std::cout;
+using std::cin;
+using std::endl;
 
 int main()
 {
-	story s("test.txt");
+	string the_story;
+	string word_type;
+
+	ifstream in("test.txt");
+	getline(in, the_story, '(');
 	string word;
 
-	while(s.storyContinues())
+	while(!in.fail())
 	{
-		cout << "Type a " << s.getWordType() << endl;
+		getline(in, word_type, ')');
+		if(word_type == "end")
+			break;
+		cout << "Type a " << word_type << endl;
 		cin >> word;
-		s.addWord(word);
+		the_story.append(word);
+		string appended;
+		getline(in, appended, '(');
+		the_story.append(appended);
 	}
 
-	s.printStory();
+	cout << the_story << endl;
+	return 0;
 }
