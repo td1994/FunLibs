@@ -18,8 +18,22 @@ int main()
 	string word_type;
 	string response;
 	string outfile = "output.txt";
+	string usrNum;
+	string puzzle;
 
+
+	cout << "Welcome to FunLibs!" << endl << "Choose puzzle (#1-6)" << endl;
+	cin >> usrNum;
 	ifstream in("test.txt");
+
+	getline(in, puzzle, ']');
+
+	while (usrNum != puzzle)
+	{
+		in.ignore (200, '\n');
+		getline(in, puzzle, ']');
+	}
+
 	getline(in, the_story, '(');
 	string word;
 
@@ -37,7 +51,6 @@ int main()
 	}
 
 	cout << the_story << endl;
-	
 	
 	while(1){
 		cout << "Would you like to save this story (y/n)" << endl;
@@ -71,6 +84,5 @@ int main()
 		}
 	}
 		
-	
 	return 0;
 }
