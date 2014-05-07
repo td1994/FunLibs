@@ -15,8 +15,6 @@ int main()
 	string word_type;
 	string usrNum;
 	string puzzle;
-	int usr;
-	int puz;
 
 	cout << "Welcome to FunLibs!" << endl << "Choose puzzle (#1-3)" << endl;
 	cin >> usrNum;
@@ -48,6 +46,7 @@ int main()
 	}
 
 	cout << the_story << endl;
-	cin >> usrNum;
+
 	return 0;
 }
+>>>>>>> 868a72eede164d754eb9bc766b12a9b4609a183b
