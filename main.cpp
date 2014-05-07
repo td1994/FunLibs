@@ -16,7 +16,7 @@ int main()
 	string usrNum;
 	string puzzle;
 
-	cout << "Welcome to FunLibs!" << endl << "Choose puzzle (#1-3)" << endl;
+	cout << "Welcome to FunLibs!" << endl << "Choose puzzle (#1-6)" << endl;
 	cin >> usrNum;
 	ifstream in("test.txt");
 		
