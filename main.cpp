@@ -13,8 +13,21 @@ int main()
 {
 	string the_story;
 	string word_type;
+	string usrNum;
+	string puzzle;
 
+	cout << "Welcome to FunLibs!" << endl << "Choose puzzle (#1-6)" << endl;
+	cin >> usrNum;
 	ifstream in("test.txt");
+
+	getline(in, puzzle, ']');
+
+	while (usrNum != puzzle)
+	{
+		in.ignore (200, '\n');
+		getline(in, puzzle, ']');
+	}
+
 	getline(in, the_story, '(');
 	string word;
 
@@ -32,5 +45,6 @@ int main()
 	}
 
 	cout << the_story << endl;
+
 	return 0;
 }
