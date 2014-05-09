@@ -1,0 +1,8 @@
+edit: main.o
+	cc -o edit main.o
+
+main.o: main.c defs.h command.h
+	cc -c main.c
+
+clean:
+	rm edit main.o
